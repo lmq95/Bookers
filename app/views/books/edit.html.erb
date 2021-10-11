@@ -1,10 +1,11 @@
-<body><h1>Editing Book</h1>
+<body>
+  <h1>Editing Book</h1>
   <%= form_with model:@book, local:true do |f| %>
-  <div class="field"> 
+  <div class="field">
     <label for="book_title">Title</label>
       <%= f.text_field :title %>
   </div>
-  <div class="field"> 
+  <div class="field">
     <label for="book_body">Body</label>
     <%= f.text_area :body %>
   </div>
@@ -12,9 +13,9 @@
   <%= f.submit 'Create Book' %>
  </div>
  <% end %>
- 
+
 <%= link_to "Show", book_path, class: "show" %>
 |
-<%= link_to "Back", books_path, class: "edit" %></a>
+<%= link_to "Back", books_path, class: "Back" %>
 
 </body>
