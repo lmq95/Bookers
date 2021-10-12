@@ -14,8 +14,11 @@ td {
     padding-right: 5px;
 }
 
+a {
+    color: #000;
+}
 
-p, ol, ul, td {
+p, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 18px;
