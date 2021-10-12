@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <body>
   <h1>Books</h1>
   <table>
@@ -18,7 +22,7 @@
             <%= link_to "Show", book_path(book.id), class: "show" %>
           </td>
           <td>
-            <%= link_to "Edit", edit_book_path(book.id), class: "edit" %>
+            <%= link_to "Edit", edit_book_path(book.id), class: "Edit" %>
           </td>
           <td>
             <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure？" %>
@@ -31,6 +35,12 @@
 
 
   <h2>New book</h2>
+  <% if @book.errors.any? %>
+    <%= @book.errors.count %>件のエラーが発生しました
+    <% @book.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
 
   <%= form_with model:@book, class: 'new_book', local:true do |f| %>
     <div class="field">
