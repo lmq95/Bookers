@@ -1,6 +1,16 @@
-<p><strong>Title: </strong><%= @book.title %></p>
-<p><strong>Body: </strong><%= @book.body %></p>
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
 
-<a class="edit_book_path"><%= link_to "Edit", edit_book_path(@book) %></a>
+<body>
+  <p>
+    <strong>Title: </strong><%= @book.title %>
+  </p>
+  <p>
+    <strong>Body: </strong><%= @book.body %>
+  </p>
+  <%= link_to "Edit", edit_book_path(@book), class: "Edit" %>
 |
-<a class="edit_book_path"><%= link_to "Back", books_path %></a>
+  <%= link_to "Back", books_path, class: "Back" %>
+
+</body>
