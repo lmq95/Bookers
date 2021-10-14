@@ -16,7 +16,6 @@ class BooksController < ApplicationController
     end
   end
 
-
   def show
     @book = Book.find(params[:id])
   end
@@ -43,9 +42,9 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-end
-
 private
   def book_params
     params.require(:book).permit(:title, :body)
   end
+
+end
